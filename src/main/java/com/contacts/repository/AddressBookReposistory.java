@@ -7,9 +7,8 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.contacts.model.AddressBook;
 
-@RepositoryRestResource(collectionResourceRel = "addressdata", 
-path = "addressdata")
-public interface AddressBookReposistory extends MongoRepository<AddressBook,Integer>{
+//@RepositoryRestResource(collectionResourceRel = "addressdata", path = "addressdata")
+public interface AddressBookReposistory extends MongoRepository<AddressBook,String>,AddressCustomRepository{
 	public List<AddressBook> findAddressByProperties(String firstName, String lastName, 
 			String street, String city, String state,String fipsCode);
 
